@@ -61,6 +61,9 @@ AlignHash:
 IndentArray:
   EnforcedStyle: consistent
 
+SignalException:
+  EnforcedStyle: semantic
+
 #MultilineMethodCallIndentation:
 #  EnforcedStyle: indented
 #
