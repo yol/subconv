@@ -1,0 +1,106 @@
+/* default values */
+::cue {
+  line-height: 5.33vh;
+  font-size: 4.1vh;
+  font-family: monospace;
+  font-style: normal;
+  font-weight: normal;
+  background-color: black;
+  color: white;
+}
+/* special cue parts */
+::cue(c.transparent) {
+  color: transparent;
+}
+/* need to set this before changing color, otherwise the color is lost */
+::cue(c.semi-transparent) {
+  color: rgba(0, 0, 0, 0.5);
+}
+/* need to set this before changing color, otherwise the color is lost */
+::cue(c.opaque) {
+  color: rgba(0, 0, 0, 1);
+}
+::cue(c.blink) {
+  text-decoration: blink;
+}
+::cue(c.white) {
+  color: white;
+}
+::cue(c.red) {
+  color: red;
+}
+::cue(c.green) {
+  color: lime;
+}
+::cue(c.blue) {
+  color: blue;
+}
+::cue(c.cyan) {
+  color: cyan;
+}
+::cue(c.yellow) {
+  color: yellow;
+}
+::cue(c.magenta) {
+  color: magenta;
+}
+::cue(c.bg_transparent) {
+  background-color: transparent;
+}
+/* need to set this before changing color, otherwise the color is lost */
+::cue(c.bg_semi-transparent) {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* need to set this before changing color, otherwise the color is lost */
+::cue(c.bg_opaque) {
+  background-color: rgba(0, 0, 0, 1);
+}
+::cue(c.bg_white) {
+  background-color: white;
+}
+::cue(c.bg_green) {
+  background-color: lime;
+}
+::cue(c.bg_blue) {
+  background-color: blue;
+}
+::cue(c.bg_cyan) {
+  background-color: cyan;
+}
+::cue(c.bg_red) {
+  background-color: red;
+}
+::cue(c.bg_yellow) {
+  background-color: yellow;
+}
+::cue(c.bg_magenta) {
+  background-color: magenta;
+}
+::cue(c.bg_black) {
+  background-color: black;
+}
+/* Examples of combined colors */
+::cue(c.bg_white.bg_semi-transparent) {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+::cue(c.bg_green.bg_semi-transparent) {
+  background-color: rgba(0, 256, 0, 0.5);
+}
+::cue(c.bg_blue.bg_semi-transparent) {
+  background-color: rgba(0, 0, 255, 0.5);
+}
+::cue(c.bg_cyan.bg_semi-transparent) {
+  background-color: rgba(0, 255, 255, 0.5);
+}
+::cue(c.bg_red.bg_semi-transparent) {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+::cue(c.bg_yellow.bg_semi-transparent) {
+  background-color: rgba(255, 255, 0, 0.5);
+}
+::cue(c.bg_magenta.bg_semi-transparent) {
+  background-color: rgba(255, 0, 255, 0.5);
+}
+::cue(c.bg_black.bg_semi-transparent) {
+  background-color: rgba(0, 0, 0, 0.5);
+}

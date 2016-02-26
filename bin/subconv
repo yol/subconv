@@ -1,0 +1,58 @@
+#!/usr/bin/env ruby
+require 'subconv'
+require 'optparse'
+
+# Parse options
+options = {}
+OptionParser.new do |opts|
+  opts.banner = 'Usage: subconv [options] SCC-FILE'
+  opts.on('-o', '--out-file FILENAME', 'Write output to specified file instead of stdout') do |filename|
+    options[:out_file] = filename
+  end
+  opts.on('-f', '--fps FPS', 'Assume given video fps for timecode calculation (default: 29.97)') do |fps|
+    options[:fps] = fps
+  end
+  opts.on('-c', '--no-color', 'Remove all color information from output') do
+    options[:no_color] = true
+  end
+  opts.on('-F', '--no-flash', 'Remove all flash (blinking) information from output') do
+    options[:no_flash] = true
+  end
+  opts.on('-s', '--simple-positions', 'Convert to simple top/bottom center-aligned captions') do
+    options[:simple_positions] = true
+  end
+  opts.on_tail('-h', '--help', 'Show this help message and quit.') do
+    puts opts.help
+    exit
+  end
+end.parse!
+options[:in_file] = ARGV.pop
+raise 'No SCC file given to process' unless options[:in_file]
+options[:fps] = 29.97 if options[:fps].nil?
+
+# Do conversion
+reader = Subconv::Scc::Reader.new
+File.open(options[:in_file], File::RDONLY) do |file|
+  reader.read(file, options[:fps].to_f)
+end
+captions = Subconv::Scc::Transformer.new.transform reader.captions
+filter_options = {}
+filter_options[:remove_color] = true if options[:no_color]
+filter_options[:remove_flash] = true if options[:no_flash]
+if options[:simple_positions]
+  filter_options[:merge_by_position] = true
+  filter_options[:xy_position_to_top_or_bottom] = true
+end
+Subconv::CaptionFilter.new(filter_options).process! captions
+writer = Subconv::WebVtt::Writer.new trim_line_whitespace: true
+
+# Write result
+if options[:out_file]
+  File.open(options[:out_file], File::WRONLY | File::TRUNC | File::CREAT) do |file|
+    writer.write(file, captions)
+  end
+else
+  writer.write(STDOUT, captions)
+end
+
+STDERR.write("#{captions.length} captions written\n")

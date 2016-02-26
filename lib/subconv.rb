@@ -1,0 +1,5 @@
+require 'subconv/version'
+require 'subconv/scc/reader'
+require 'subconv/scc/transformer'
+require 'subconv/webvtt/writer'
+require 'subconv/caption_filter'
