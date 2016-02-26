@@ -166,7 +166,7 @@ module Subconv
                 differences_to_close.any? { |difference| node.instance_of?(node_class_for_property(difference)) }
               }
 
-              raise 'No node for property to close found in stack' if first_matching_node_index.nil?
+              fail 'No node for property to close found in stack' if first_matching_node_index.nil?
 
               # Collect styles below it that should _not_ be closed for possible re-opening because they would otherwise get lost
               reopen = parent_node_stack[first_matching_node_index..-1].select { |node|
@@ -239,7 +239,7 @@ module Subconv
         if property_class == ColorNode
           ColorNode.new(value.to_symbol)
         else
-          raise 'Cannot create boolean property node for property off' unless value
+          fail 'Cannot create boolean property node for property off' unless value
           property_class.new
         end
       end

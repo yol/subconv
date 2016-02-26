@@ -91,7 +91,7 @@ module Subconv
       # Get the Color instance corresponding to a CEA608 color code
       def self.for_value(value)
         color = COLORS[value]
-        raise "Color value #{value} is unknown" if color.nil?
+        fail "Color value #{value} is unknown" if color.nil?
         color
       end
 
@@ -226,7 +226,7 @@ module Subconv
         @data_channel = 0
 
         magic = io.readline.chomp!
-        raise InvalidFormatError, 'File does not start with "' + Scc::FILE_MAGIC + '"' unless Scc::FILE_MAGIC == magic
+        fail InvalidFormatError, 'File does not start with "' + Scc::FILE_MAGIC + '"' unless Scc::FILE_MAGIC == magic
 
         io.each_line do |line|
           line.chomp!
@@ -234,12 +234,12 @@ module Subconv
           next if line.empty?
 
           line_data = LINE_REGEXP.match(line)
-          raise InvalidFormatError, "Invalid line \"#{line}\"" if line_data.nil?
+          fail InvalidFormatError, "Invalid line \"#{line}\"" if line_data.nil?
           # Parse timecode
           old_time = @now
           timecode = Timecode.new(line_data[:timecode], fps)
           @now = timecode
-          raise InvalidFormatError, 'New timecode is behind last time' if @now < old_time
+          fail InvalidFormatError, 'New timecode is behind last time' if @now < old_time
 
           # Parse data words
           parse_data(line_data[:data], check_parity)
@@ -257,7 +257,7 @@ module Subconv
             # Decode hexadecimal word into two-byte string
             word = [word_string].pack('H*')
             # Check parity
-            raise ParityError, "At least one byte in word #{word_string} has even parity, odd required" unless !check_parity || (correct_parity?(word[0]) && correct_parity?(word[1]))
+            fail ParityError, "At least one byte in word #{word_string} has even parity, odd required" unless !check_parity || (correct_parity?(word[0]) && correct_parity?(word[1]))
             # Remove parity bit for further processing
             word = word.bytes.collect { |byte|
               # Unset 8th bit

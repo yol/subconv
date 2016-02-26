@@ -41,7 +41,7 @@ module Subconv
                              when :bottom
                                '-1,end'
                              else
-                               raise "Unknown position #{caption.position}"
+                               fail "Unknown position #{caption.position}"
                              end
         end
 
@@ -123,7 +123,7 @@ module Subconv
         when [ColorNode]
           '<c.' + node.color.to_s + '>' + children + '</c>'
         else
-          raise "Unknown node class #{node.class}"
+          fail "Unknown node class #{node.class}"
         end
       end
     end

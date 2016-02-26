@@ -6,8 +6,8 @@ module Subconv
       def initialize(start_time, end_time)
         @start_time = start_time
         @end_time = end_time
-        raise InvalidTimespanError, 'Timespan end time is before start time' if @end_time < @start_time
-        raise InvalidTimespanError, 'Timespan is empty' if @start_time == @end_time
+        fail InvalidTimespanError, 'Timespan end time is before start time' if @end_time < @start_time
+        fail InvalidTimespanError, 'Timespan is empty' if @start_time == @end_time
       end
 
       def ==(other)

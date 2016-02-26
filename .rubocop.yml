@@ -1,0 +1,71 @@
+AllCops:
+  TargetRubyVersion: 2.2
+  Exclude:
+    - '**/bin/**/*'
+    - '**/db/schema.rb'
+    - '**/config/**/*'
+    - '**/lib/tasks/*.rake'
+
+# Use only ascii symbols in identifiers.
+AsciiComments:
+  Enabled: false
+
+# Document classes and non-namespace modules.
+Documentation:
+  Enabled: false
+
+# Limit lines to 79 characters.
+LineLength:
+  Enabled: false
+
+BlockDelimiters:
+  EnforcedStyle: semantic
+
+MethodLength:
+  Max: 30
+
+# Checks for proper usage of fail and raise.
+#SignalException:
+#  Enabled: false
+
+StringLiterals:
+  EnforcedStyle: single_quotes
+
+# Avoid the use of attr. Use attr_reader and attr_accessor instead.
+Attr:
+  Enabled: false
+
+UnusedBlockArgument:
+  AutoCorrect: false
+
+UnusedMethodArgument:
+  AutoCorrect: false
+
+CyclomaticComplexity:
+  Max: 30
+
+# https://github.com/bbatsov/ruby-style-guide/issues/395
+RaiseArgs:
+  Enabled: false
+
+AbcSize:
+  Max: 20
+
+TrivialAccessors:
+  AllowPredicates: true
+
+AlignHash:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+
+IndentArray:
+  EnforcedStyle: consistent
+
+#MultilineMethodCallIndentation:
+#  EnforcedStyle: indented
+#
+#MultilineOperationIndentation:
+#  EnforcedStyle: indented
+#
+#AlignParameters:
+#  Enabled: false

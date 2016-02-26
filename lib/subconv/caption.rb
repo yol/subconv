@@ -16,14 +16,14 @@ module Subconv
     # Force x position to be a float between 0 and 1
     def x=(x)
       x = x.to_f
-      raise RangeError, 'X position not between 0 and 1' unless x.between?(0.0, 1.0)
+      fail RangeError, 'X position not between 0 and 1' unless x.between?(0.0, 1.0)
       @x = x
     end
 
     # Force y position to be a float between 0 and 1
     def y=(y)
       y = y.to_f
-      raise RangeError, 'Y position not between 0 and 1' unless y.between?(0.0, 1.0)
+      fail RangeError, 'Y position not between 0 and 1' unless y.between?(0.0, 1.0)
       @y = y
     end
   end
@@ -57,7 +57,7 @@ module Subconv
     attr_reader :children
 
     def children=(children)
-      raise 'Children must be an array' unless children.class == Array
+      fail 'Children must be an array' unless children.class == Array
       @children = children
     end
   end

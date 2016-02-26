@@ -8,11 +8,11 @@ Gem::Specification.new do |s|
   s.version = Subconv::VERSION
 
   s.required_rubygems_version = Gem::Requirement.new('>= 0') if s.respond_to? :required_rubygems_version=
-  s.required_ruby_version = '>= 2.3'
+  s.required_ruby_version = '>= 2.0'
   s.authors = ['Philipp Kerling']
   s.email = ['pkerling@casix.org']
   s.homepage = 'https://github.com/pkerling/subconv'
-  s.files = `git ls-files -z`.split("\x0").grep_v(%r{^scc-data/})
+  s.files = `git ls-files -z`.split("\x0").reject { |elem| elem =~ %r{^scc-data/} }
   s.executables = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
   s.test_files = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ['lib']
@@ -28,4 +28,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'bundler', '~> 1.7'
   s.add_development_dependency 'rspec', '~> 3.1.0'
   s.add_development_dependency 'rake'
+  s.add_development_dependency 'rubocop'
+  s.add_development_dependency 'json'
 end
