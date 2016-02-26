@@ -1,4 +1,8 @@
-[![Build Status](https://travis-ci.org/pkerling/subconv.svg?branch=master)](https://travis-ci.org/pkerling/subconv) [![Coverage Status](https://coveralls.io/repos/github/pkerling/subconv/badge.svg?branch=master)](https://coveralls.io/github/pkerling/subconv?branch=master)
+[![Gem Version](https://badge.fury.io/rb/subconv.svg)](http://badge.fury.io/rb/subconv)
+[![Dependency Status](https://gemnasium.com/pkerling/subconv.svg)](https://gemnasium.com/pkerling/subconv)
+[![Build Status](https://travis-ci.org/pkerling/subconv.svg?branch=master)](https://travis-ci.org/pkerling/subconv)
+[![Coverage Status](https://coveralls.io/repos/github/pkerling/subconv/badge.svg?branch=master)](https://coveralls.io/github/pkerling/subconv?branch=master)
+[![Inline docs](http://inch-ci.org/github/pkerling/subconv.svg?branch=master)](http://inch-ci.org/github/pkerling/subconv)
 
 subconv - Ruby SCC (EIA-608) to WebVTT subtitle converter
 =========================================================
