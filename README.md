@@ -13,14 +13,14 @@ Installation
 
 Usage
 -----
-        $ subconv --help
-        Usage: subconv [options] SCC-FILE
-            -o, --out-file FILENAME          Write output to specified file instead of stdout
-            -f, --fps FPS                    Assume given video fps for timecode calculation (default: 29.97)
-            -c, --no-color                   Remove all color information from output
-            -F, --no-flash                   Remove all flash (blinking) information from output
-            -s, --simple-positions           Convert to simple top/bottom center-aligned captions
-            -h, --help                       Show this help message and quit.
+	$ subconv --help
+	Usage: subconv [options] SCC-FILE
+	    -o, --out-file FILENAME          Write output to specified file instead of stdout
+	    -f, --fps FPS                    Assume given video fps for timecode calculation (default: 29.97)
+	    -c, --no-color                   Remove all color information from output
+	    -F, --no-flash                   Remove all flash (blinking) information from output
+	    -s, --simple-positions           Convert to simple top/bottom center-aligned captions
+	    -h, --help                       Show this help message and quit.
 
 The API can also be used programmatically, the `bin/subconv` file is just an
 example for this.
