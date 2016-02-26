@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/pkerling/subconv.svg?branch=master)](https://travis-ci.org/pkerling/subconv) [![Coverage Status](https://coveralls.io/repos/github/pkerling/subconv/badge.svg?branch=master)](https://coveralls.io/github/pkerling/subconv?branch=master)
+
 subconv - Ruby SCC (EIA-608) to WebVTT subtitle converter
 =========================================================
 
