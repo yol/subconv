@@ -8,10 +8,11 @@ Gem::Specification.new do |s|
   s.version = Subconv::VERSION
 
   s.required_rubygems_version = Gem::Requirement.new('>= 0') if s.respond_to? :required_rubygems_version=
+  s.required_ruby_version = '>= 2.3'
   s.authors = ['Philipp Kerling']
   s.email = ['pkerling@casix.org']
   s.homepage = 'https://github.com/pkerling/subconv'
-  s.files = `git ls-files -z`.split("\x0")
+  s.files = `git ls-files -z`.split("\x0").grep_v(%r{^scc-data/})
   s.executables = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
   s.test_files = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ['lib']
