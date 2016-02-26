@@ -1,5 +1,4 @@
-require 'subconv/scc/transformer'
-require 'test_helpers'
+require 'spec_helper'
 
 module Subconv
   describe Scc::Transformer do

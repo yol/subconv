@@ -1,5 +1,4 @@
-require 'subconv/scc/reader'
-require 'test_helpers'
+require 'spec_helper'
 
 module Subconv
   # Often used codes:

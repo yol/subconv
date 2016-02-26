@@ -1,5 +1,4 @@
-require 'subconv/webvtt/writer'
-require 'test_helpers'
+require 'spec_helper'
 
 module Subconv
   describe WebVtt::Writer do

@@ -1,5 +1,4 @@
-require 'subconv/caption_filter'
-require 'test_helpers'
+require 'spec_helper'
 
 module Subconv
   describe CaptionFilter do
