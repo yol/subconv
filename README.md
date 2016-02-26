@@ -5,7 +5,7 @@ This Ruby Gem provides conversion of subtitle files in the .scc (Scenarist Close
 Captions) format to the more modern WebVTT format that can be used in browsers
 with HTML5 videos.
 
-The processing is modeled after [https://dvcs.w3.org/hg/text-tracks/raw-file/default/608toVTT/608toVTT.html].
+The processing is modeled after [this paper by the W3C](https://dvcs.w3.org/hg/text-tracks/raw-file/default/608toVTT/608toVTT.html]).
 
 Installation
 ------------
